@@ -1,35 +1,45 @@
-Maintainer: Celogeek
-
 This is a build machine for perl modules with Docker.
 
 You can pull the docker image :
 
+```
 sudo docker pull celogeek/gitlab-ci-perlbrew
+```
 
 Or build it
 
+```
 ./build.sh
+```
 
 To use it with gitlab_ci_runner :
 
-Create a directory into the gitlab_ci_runner with special right
+Create a directory into the gitlab_ci_runner with special right. It will keep the cache of build modules.
 
+```
 mkdir ~/buildlib
 chmod 2777 ~/buildlib
+```
 
-To start a test in gitlabci, here the command :
-
-sudo docker run -v ~/buildlib:/buildlib -v $PWD:/build celogeek/gitlab-ci-perlbrew
-
-You gitlab_ci_runner need to have right to run sudo docker run :
+You gitlab_ci_runner need to have right to run sudo docker run.
 
 First add docker groups :
 
+```
 sudo groupadd docker
 sudo adduser gitlab_ci_runner docker
-
 sudo visudo
+```
 
+And add this :
+
+```
 %docker ALL = NOPASSWD: /usr/local/bin/docker run *
+```
 
-Now try to run your test.
+To start a test in gitlabci, here the command :
+
+```
+sudo docker run -v ~/buildlib:/buildlib -v $PWD:/build celogeek/gitlab-ci-perlbrew
+```
+
