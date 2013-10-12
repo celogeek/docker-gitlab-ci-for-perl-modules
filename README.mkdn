@@ -1,5 +1,7 @@
 This is a build machine for perl modules with Docker.
 
+For now, only Dist::Zilla project will works.
+
 You can pull the docker image :
 
 ```
