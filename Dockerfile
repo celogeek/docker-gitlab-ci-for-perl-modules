@@ -1,5 +1,5 @@
 FROM findspire/wheezy
-MAINTAINER Vincent Bachelier <vincent@weborama.com>
+MAINTAINER Celogeek <me@celogeek.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
