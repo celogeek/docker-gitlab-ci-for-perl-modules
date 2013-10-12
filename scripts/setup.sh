@@ -25,5 +25,5 @@ echo 'export PERL_CPANM_OPT="--mirror http://cpan.celogeek.com"' >> /home/gitlab
 su gitlab_ci_runner -c 'source ~/perl5/perlbrew/etc/bashrc && perlbrew install -j4 -nv --as gitlab_ci_runner-perl-build perl-5.18.1'
 su gitlab_ci_runner -c 'source ~/perl5/perlbrew/etc/bashrc && perlbrew switch gitlab_ci_runner-perl-build'
 su gitlab_ci_runner -c 'source ~/perl5/perlbrew/etc/bashrc && perlbrew install-cpanm'
-su gitlab_ci_runner -c 'source ~/perl5/perlbrew/etc/bashrc && cpanm -nq Dist::Zilla'
+su gitlab_ci_runner -c 'source ~/perl5/perlbrew/etc/bashrc && cpanm -nq Dist::Zilla Mo Moo Mouse Moose'
 
